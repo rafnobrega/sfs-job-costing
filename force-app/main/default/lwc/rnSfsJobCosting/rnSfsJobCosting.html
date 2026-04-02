@@ -1,0 +1,62 @@
+<template>
+    <div class="card-container">
+        <div class="card-header">
+            <span class="header-title">Job Costing</span>
+            <div class="header-actions">
+                <template lwc:if={showData}>
+                    <span class={marginBadgeClass}>{budgetBadgeDisplay}</span>
+                </template>
+                <button class="refresh-btn" onclick={handleRefresh} title="Refresh">
+                    <lightning-icon icon-name="utility:refresh" size="xx-small" alternative-text="Refresh"></lightning-icon>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <template lwc:if={isLoading}>
+                <div class="spinner-container">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </template>
+
+            <template lwc:elseif={error}>
+                <p class="empty-text">Unable to load profitability data.</p>
+            </template>
+
+            <template lwc:elseif={showNoEstimate}>
+                <p class="empty-text">No estimate data available for this Work Order.</p>
+            </template>
+
+            <template lwc:else>
+                <div class="row-header">
+                    <span class="col-label"></span>
+                    <span class="col-header">Estimated</span>
+                    <span class="col-header">Actual</span>
+                    <span class="col-header">Variance</span>
+                </div>
+
+                <template for:each={rows} for:item="row">
+                    <div key={row.label} class="data-row">
+                        <span class="col-label">{row.label}</span>
+                        <span class="col-value">{row.estimated}</span>
+                        <span class="col-value">{row.actual}</span>
+                        <span class={row.varianceClass}>{row.varianceDisplay}</span>
+                        <template lwc:if={row.hasEstimate}>
+                            <div class="bar-track">
+                                <div class={row.barClass} style={row.barStyle}></div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <template lwc:if={hasExpenses}>
+                    <div class="expenses-section">
+                        <div class="expenses-row">
+                            <span class="expenses-label">Expenses</span>
+                            <span class="expenses-value">{expensesDisplay}</span>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

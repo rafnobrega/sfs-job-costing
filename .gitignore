@@ -1,0 +1,20 @@
+# Salesforce
+.sfdx/
+.sf/
+deploy-options.json
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if LWC local dev)
+node_modules/
+package-lock.json
+
+# Logs
+*.log

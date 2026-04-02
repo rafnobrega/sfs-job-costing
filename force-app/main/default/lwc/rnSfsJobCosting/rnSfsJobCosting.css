@@ -1,0 +1,191 @@
+.card-container {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e5e5;
+    background: #f3f3f3;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.refresh-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s ease;
+    --sds-c-icon-color-foreground-default: #706e6b;
+}
+
+.refresh-btn:hover {
+    opacity: 0.7;
+}
+
+.header-title {
+    color: #181818;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+/* Column headers */
+.row-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.col-header {
+    font-size: 0.625rem;
+    color: #706e6b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: right;
+    font-weight: 700;
+}
+
+/* Data rows */
+.data-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.col-label {
+    color: #3e3e3c;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.col-value {
+    color: #181818;
+    font-size: 0.8125rem;
+    text-align: right;
+}
+
+/* Variance colors */
+.col-variance {
+    font-size: 0.8125rem;
+    text-align: right;
+    font-weight: 600;
+}
+
+.variance-under {
+    color: #2e844a;
+}
+
+.variance-over {
+    color: #c23934;
+}
+
+/* Progress bars */
+.bar-track {
+    grid-column: 1 / -1;
+    height: 0.25rem;
+    background: #e5e5e5;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 0.25rem;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 1rem;
+    transition: width 0.6s ease;
+}
+
+.bar-green {
+    background: #2e844a;
+}
+
+.bar-red {
+    background: #c23934;
+}
+
+/* Margin badge */
+.margin-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.margin-badge-positive {
+    background: #cdefc4;
+    color: #2e844a;
+}
+
+.margin-badge-negative {
+    background: #FED8D5;
+    color: #c23934;
+}
+
+/* Expenses section */
+.expenses-section {
+    margin-top: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    background: #f3f3f3;
+    border-radius: 0.25rem;
+    border: 1px solid #e5e5e5;
+}
+
+.expenses-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expenses-label {
+    color: #706e6b;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.expenses-value {
+    color: #DD7A01;
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+/* States */
+.empty-text {
+    color: #706e6b;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
