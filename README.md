@@ -41,17 +41,51 @@ Expenses like travel, meals, and lodging are displayed in a separate section sin
 
 ## Installation
 
-### Deploy to your org
+### Step 1: Clone the repository
 
 ```bash
-sf project deploy start --source-dir force-app -o <your-org-alias>
+git clone https://github.com/rafnobrega/sfs-job-costing.git
+cd sfs-job-costing
 ```
 
-### Add to Work Order page
+Or download the ZIP from the green **Code** button on GitHub and extract it.
 
-1. Open a Work Order record → **Setup** (gear) → **Edit Page**
-2. Drag the **Job Costing** component onto the page layout
-3. Save and activate
+### Step 2: Authenticate your Salesforce org
+
+If you haven't already connected your org to the Salesforce CLI:
+
+```bash
+sf org login web --set-default --alias my-org
+```
+
+This opens a browser window — log in to the org where you want to deploy.
+
+> **Using VS Code?** You can also authenticate via the command palette: `Cmd+Shift+P` → **SFDX: Authorize an Org**.
+
+### Step 3: Deploy to your org
+
+**From the terminal:**
+
+```bash
+sf project deploy start --source-dir force-app -o my-org
+```
+
+**From VS Code:**
+
+1. Open the `sfs-job-costing` folder in VS Code
+2. Right-click the `force-app` folder in the Explorer sidebar
+3. Select **SFDX: Deploy Source to Org**
+
+You should see a success message confirming the Apex classes and LWC were deployed.
+
+### Step 4: Add the component to your Work Order page
+
+1. Navigate to any **Work Order** record in your org
+2. Click the **gear icon** (Setup) → **Edit Page** to open Lightning App Builder
+3. In the Components panel on the left, search for **Job Costing**
+4. Drag it onto your desired location on the page layout (the right sidebar works well)
+5. Click **Save**, then **Activate** (assign to your app, record type, or as org default)
+6. Click **Back** to return to the record and see the component live
 
 ## Styling
 
