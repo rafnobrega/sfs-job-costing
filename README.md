@@ -1,5 +1,9 @@
 # SFS Job Costing LWC
 
+<p align="center">
+  <img src="assets/screenshot.png" alt="Job Costing LWC — over budget and on budget examples" width="800">
+</p>
+
 A Lightning Web Component for Salesforce Field Service that provides real-time cost tracking directly on the Work Order record page.
 
 ![Job Costing LWC](https://img.shields.io/badge/Salesforce-Field%20Service-00A1E0?logo=salesforce) ![API Version](https://img.shields.io/badge/API%20Version-62.0-green)
