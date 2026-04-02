@@ -12,9 +12,9 @@ A Lightning Web Component for Salesforce Field Service that provides real-time c
 
 The Job Costing LWC compares estimated vs. actual spend across labor hours, labor dollars, and materials. Variance percentages and color-coded progress bars make it immediately clear which cost categories are tracking on budget and which are running over. A header badge summarizes overall budget status at a glance.
 
-Expenses like travel, meals, and lodging are displayed in a separate section since they're typically non-billable and shouldn't distort the estimate-to-actual comparison.
+Expenses like travel, meals, and lodging are displayed in a separate section since they're can be non-billable and shouldn't distort the estimate-to-actual comparison.
 
-**Important:** This is job *costing*, not job *profitability* — it tracks what was planned vs. what was consumed, but does not factor in billing rates, markup, or profit margins on labor or materials. It answers "did we spend what we expected?" rather than "did we make money?" To achieve true profitability analysis, you could integrate with a system of record like an ERP to pull in revenue and margin data, or add custom fields on the Work Order to capture billing rates and markup percentages, allowing the component to calculate actual profit per job.
+**Important:** This is job *costing*, not job *profitability* - it tracks what was planned vs. what was consumed, but does not factor in billing rates, markup, or profit margins on labor or materials. It answers "did we spend what we expected?" rather than "did we make money?". To achieve true profitability analysis, you could integrate with a system of record like an ERP to pull in revenue and margin data, or add custom fields on the Work Order to capture billing rates and markup percentages, allowing the component to calculate actual profit per job.
 
 ## Data Sources
 
@@ -32,7 +32,7 @@ Expenses like travel, meals, and lodging are displayed in a separate section sin
 
 | File | Description |
 |------|-------------|
-| `RN_SFS_JobCostingController.cls` | Apex controller — queries estimates, actuals, and expenses |
+| `RN_SFS_JobCostingController.cls` | Apex controller - queries estimates, actuals, and expenses |
 | `RN_SFS_JobCostingControllerTest.cls` | Test class with 90%+ coverage |
 | `rnSfsJobCosting/` | LWC — UI rendering, variance calculations, formatting |
 
