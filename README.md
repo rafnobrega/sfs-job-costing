@@ -20,7 +20,7 @@ Expenses like travel, meals, and lodging are displayed in a separate section sin
 
 | Row | Estimated Source | Actual Source |
 |-----|-----------------|---------------|
-| Labor (hrs) | `WorkType.EstimatedDuration` | `TimeSheetEntry` (summed by Work Order) |
+| Labor (hrs) | `WorkOrder.Duration` (falls back to `WorkType.EstimatedDuration`) | `TimeSheetEntry` (summed by Work Order) |
 | Labor ($) | `ProductRequired` (Labor product qty x price) | Timesheet hours x labor rate from `PricebookEntry` |
 | Materials | `ProductRequired` (non-Labor products qty x price) | `ProductConsumed` (qty x unit price) |
 | Expenses | — | Standard `Expense` object (summed by Work Order) |
