@@ -7,6 +7,7 @@ public with sharing class RN_SFS_JobCostingController {
         // 1. Query Work Order with WorkType info
         WorkOrder wo = [
             SELECT Id, WorkOrderNumber, WorkTypeId, Pricebook2Id,
+                   Duration, DurationType,
                    WorkType.EstimatedDuration,
                    WorkType.DurationType
             FROM WorkOrder
@@ -82,7 +83,13 @@ public with sharing class RN_SFS_JobCostingController {
         Decimal estLaborCost = 0;
         Decimal estMaterialsCost = 0;
 
-        if (wo.WorkType != null && wo.WorkType.EstimatedDuration != null) {
+        if (wo.Duration != null) {
+            if (wo.DurationType == 'Minutes') {
+                estLaborHours = wo.Duration / 60.0;
+            } else {
+                estLaborHours = wo.Duration;
+            }
+        } else if (wo.WorkType != null && wo.WorkType.EstimatedDuration != null) {
             if (wo.WorkType.DurationType == 'Minutes') {
                 estLaborHours = wo.WorkType.EstimatedDuration / 60.0;
             } else {
